@@ -1,0 +1,54 @@
+.table_header {
+  font-weight: bold;
+  font-size: 15px;
+  color: grey;
+}
+
+.table_table {
+  margin-top: 15px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.table_table table th {
+  padding: 0.5rem;
+}
+
+.table_table table td {
+  padding: 0.5rem;
+}
+.table_table table {
+  width: 100%;
+}
+
+.table_table table thead tr th {
+  position: sticky;
+  top: 0px;
+  text-align: left;
+  background-color: black;
+  color: whitesmoke;
+}
+
+.table_table table tbody tr:nth-child(odd) {
+  background-color: rgb(245, 245, 245);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

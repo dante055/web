@@ -1,0 +1,51 @@
+.maps__header {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: grey;
+}
+
+.map__leaflet {
+  margin-top: 20px;
+  height: 330px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+}
+
+.map__leaflet .leaflet-container {
+  height: 100%;
+  border-radius: 12px;
+}
+
+.showDataOnMap__container {
+  height: 100%;
+  width: 150px;
+  border-radius: 12px;
+}
+
+.showDataOnMap__flag {
+  height: 95px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.showDataOnMap__flag img {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.showDataOnMap__name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.showDataOnMap__confirmed,
+.showDataOnMap__recovered,
+.showDataOnMap__deaths {
+  font-size: 14px;
+  margin-top: 5px;
+}

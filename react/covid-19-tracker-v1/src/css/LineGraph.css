@@ -1,0 +1,17 @@
+.line {
+  margin-top: 20px;
+}
+
+.line_header {
+  font-weight: bold;
+  font-size: 20px;
+  color: grey;
+}
+
+.line_graph {
+  margin-top: 20px;
+}
+
+.line_graph canvas {
+  height: 200px;
+}
