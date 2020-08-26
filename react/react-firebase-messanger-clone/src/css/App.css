@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+}
+
+.message_input_div {
+  position: fixed;
+  bottom: 0px;
+  z-index: 1;
+  padding: 20px;
+  background-color: ghostwhite;
+  width: 100%;
+}
+
+.message_formControl {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.message_input {
+  width: 95%;
+}
+
+.message {
+  margin: 15px;
+  width: fit-content;
+  margin-top: 25px;
+}
+
+.message_user {
+  margin-left: auto;
+}
+
+.message_card {
+  background-color: rgb(228, 216, 240) !important;
+}
+
+.message_userCard {
+  color: white !important;
+  background-color: blue !important;
+}
+
+.message_cardContent {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  text-align: left;
+}
+
+.message_cardContent_title {
+  font-size: 12px !important;
+  text-align: left;
+}
