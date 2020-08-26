@@ -1,0 +1,22 @@
+.cardContent {
+  margin: 0 2% !important;
+}
+
+.cardContent__total {
+  margin-right: 10px !important;
+  color: grey;
+}
+.cardContent__today {
+  margin-right: 10px !important;
+  color: grey;
+}
+.cardContent__active {
+  margin-right: 10px !important;
+  color: rgba(255, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 770px) {
+  .cardContent {
+    margin: 2% 0 !important;
+  }
+}

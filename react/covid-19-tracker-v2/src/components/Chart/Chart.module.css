@@ -1,0 +1,25 @@
+.chart {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.charts__breadcrumb {
+  margin-left: 10% !important;
+}
+
+.charts__breadcrumbLink {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 770px) {
+  .chart {
+    width: 100%;
+  }
+}
+
+/* .chart-container {
+  position: relative;
+  height: 40vh;
+  width: 80vw;
+} */
