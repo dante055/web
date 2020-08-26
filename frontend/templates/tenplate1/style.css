@@ -1,0 +1,249 @@
+a:hover {
+  text-decoration: none;
+}
+
+#header {
+  color: #fff;
+  background-color: #e74c3c;
+}
+
+#header h1 {
+  font-size: 2rem;
+  margin-top: 5px;
+}
+
+#menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu li {
+  display: inline-block;
+}
+
+#menu li a {
+  color: #fff;
+  padding: 15px 10px;
+  display: block;
+}
+
+#menu li a:hover {
+  background-color: #c0392b;
+}
+
+#banner {
+  background: url('./images/rsz_1rsz_1alvin-engler-bihpiqa009k-unsplash.jpg')
+    no-repeat 0 0;
+  background-size: cover;
+}
+
+.banner-title {
+  padding-top: 3rem;
+}
+
+.banner-title h1 {
+  /* for the gradinet */
+  background: rgba(255, 255, 255, 0.8);
+  /* to make the width of the block only till text */
+  display: inline-block;
+  padding: 10px;
+  margin: 0;
+}
+
+.banner-title p.lead {
+  color: white;
+  background: rgba(231, 76, 60, 0.7);
+  padding: 10px;
+}
+
+.section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.section h2.section-head {
+  color: #000;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section h2.section-head:after {
+  background: #e74c3c;
+  content: '';
+  /* to show the line, after display block it will work like div */
+  display: block;
+  width: 100px;
+  height: 4px;
+  /* to make it at center set the margin auto */
+  margin: 20px auto;
+}
+
+.service-box {
+  text-align: center;
+}
+
+.service-box i.fa {
+  color: #e74c3c;
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+#testimonials {
+  color: #fff;
+  background: url(./images/rsz_nicolas-thomas-pldkbhbm3hc-unsplash.jpg)
+    no-repeat 0 0;
+  background-size: cover;
+  padding: 50px 0s;
+  /* will for as a identifiee of positon for the flim absolute position */
+  position: relative;
+}
+
+/* if after is used the the test will become blur after flim is applied */
+#testimonials:before {
+  background: rgba(52, 73, 94, 0.7);
+  content: '';
+  /* to show the the flim box at the correct position and of size */
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.testimonial img {
+  height: 80px;
+  width: 90px;
+  margin-bottom: 10px;
+}
+
+.news-post img {
+  margin-bottom: 10px;
+}
+
+.news-post h3 {
+  font-size: 1.3rem;
+}
+
+.news-post a {
+  color: red;
+}
+
+.post-date {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.post-date::before {
+  content: '\f073';
+  font-family: FontAwesome;
+  padding-right: 5px;
+}
+
+a.read-more {
+  font-size: 14px;
+}
+
+a.read-more::after {
+  content: '\f101';
+  font-family: FontAwesome;
+  padding-left: 5px;
+}
+
+#footer-sidebar {
+  color: #fff;
+  background-color: #34495e;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.footer-widget h4::after {
+  background: #fff;
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  margin: 5px 0;
+}
+
+.footer-widget a {
+  color: #fff;
+}
+
+#latest-news {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#latest-news li::before {
+  content: '\f101';
+  font-family: FontAwesome;
+  padding-right: 5px;
+}
+
+#footer {
+  background: #2c3e50;
+  color: #fff;
+  padding: 10px 0;
+}
+
+#social-icon {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#social-icon li {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+#social-icon li a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* 0-768 */
+@media only screen and (max-width: 768px) {
+  #logo {
+    text-align: center;
+  }
+  #menu {
+    text-align: center;
+  }
+  .banner-title {
+    padding: 0;
+  }
+  .banner-title h1 {
+    font-size: 2rem;
+  }
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .service-box {
+    margin-bottom: 30px;
+  }
+  .testimonial {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .news-post {
+    margin-bottom: 30px;
+  }
+  .footer-widget {
+    margin-bottom: 20px;
+  }
+  #footer {
+    text-align: center;
+  }
+  #social-icon {
+    margin-top: 10px;
+  }
+}
+
+/* 768 - 992 */
+@media only screen and (max-width: 992px) {
+  .news-post {
+    margin-bottom: 30px;
+  }
+}
