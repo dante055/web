@@ -1,0 +1,83 @@
+.contentCard {
+  color: white;
+  height: 47vh;
+  width: 50vh;
+  padding: 2rem;
+  transition: transform 100ms;
+  cursor: pointer;
+}
+
+.contentCard > .contentCard_poster {
+  height: 35vh;
+  width: 50vh;
+  object-fit: cover;
+}
+
+.contentCard__profile {
+  width: 30vh !important;
+}
+
+.contentCard__profile > img {
+  width: 30vh !important;
+  object-fit: contain !important;
+  margin: auto !important;
+}
+
+.contentCard__profile > h2 {
+  text-align: center !important;
+}
+
+.contentCard > h2 {
+  padding-top: 10px;
+}
+
+.contentCard__overview {
+  display: none;
+  color: #16a085;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+.contentCard__stats {
+  display: none;
+  padding-top: 5px;
+}
+
+.contentCard__stats .contentCard__icons {
+  display: inline-flex;
+  align-items: center;
+}
+
+.contentCard__stats .contentCard__icons > svg {
+  font-size: 20px;
+}
+
+.contentCard__stats .contentCard__icons span {
+  padding-left: 5px;
+  font-size: 14px;
+  color: #16a085;
+  opacity: 0.7;
+}
+
+.contentCard:hover {
+  transform: scale(1.09);
+  height: fit-content;
+}
+
+.contentCard:hover .contentCard__overview {
+  display: block;
+  text-overflow: initial;
+  white-space: normal;
+}
+
+.contentCard:hover .contentCard__stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contentCard__profile:hover > .contentCard__stats {
+  display: flex !important;
+  justify-content: center !important;
+}

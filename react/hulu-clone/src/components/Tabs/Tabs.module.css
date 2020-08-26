@@ -1,0 +1,40 @@
+.tabs {
+  color: white;
+  display: flex;
+  overflow-x: scroll;
+  /* cursor: all-scroll; */
+  padding: 10px 0;
+  margin: 0 5vw;
+  width: 90vw;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.tabs {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.tabs > h2 {
+  cursor: pointer;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-weight: 400;
+  opacity: 0.7;
+  transition: transforn 50ms ease-out;
+}
+
+.tabs > .tabs--active {
+  color: #c0392b;
+  opacity: 1;
+  transform: scale(1.07);
+}
+
+.tabs > h2:hover {
+  opacity: 1;
+  transform: scale(1.07);
+}

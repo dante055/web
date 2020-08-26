@@ -1,0 +1,33 @@
+.tabContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabContent .tabContent__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabContent__paginator {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.tabContent__paginator > nav > ul li svg {
+  color: grey !important;
+}
+
+.tabContent__paginator > nav > ul li button {
+  color: white !important;
+}
+/* .tabContent__paginator > nav > ul li button {
+  color: red !important;
+} */
+
+.tabContent__paginator > nav > ul li div {
+  color: white !important;
+}
