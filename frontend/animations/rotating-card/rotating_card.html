@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background: grey;
+      }
+      #card {
+        height: 300px;
+        width: 300px;
+        /* to align the div at the center*/
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -150px;
+        margin-left: -150px;
+        /*to see the transformation*/
+        perspective: 500px;
+      }
+
+      /*content div will move*/
+      #content {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: transform 1s;
+        /*to preserve the backside of the content*/
+        transform-style: preserve-3d;
+      }
+
+      #card:hover #content {
+        transform: rotatey(180deg);
+      }
+
+      /*
+    	note: initially we rotate the back div and then we are rotating the content/card div
+    */
+
+      #front,
+      #back {
+        /*will make each card 100%*/
+        width: 100%;
+        height: 100%;
+        /*to make sure that the divs dont come after each other and overlow(back div will overlap the front div)*/
+        position: absolute;
+
+        background: #fff;
+        color: tomato;
+
+        font-size: 60px;
+        border-radius: 10px;
+        /*to make text at center of the div*/
+        /*	text-align:center; */
+        /*   line-height: 300px; */
+
+        display: grid;
+        place-items: center;
+
+        /*hide the back of the roted object(now other div will be visible as backface of rotated div is hidden)*/
+        backface-visibility: hidden;
+      }
+
+      #back {
+        background: tomato;
+        color: #fff;
+
+        /*rotate the back div by 180deg(even now the front wont be visible as the backface visibiliy is visible by default)*/
+        transform: rotatey(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>backface visiblity</h1>
+
+    <div id="card">
+      <div id="content">
+        <div id="front">Front</div>
+        <div id="back">Back</div>
+      </div>
+    </div>
+  </body>
+</html>
