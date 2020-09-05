@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  background-color: lightblue;
+}
+
+.app_imageContainer {
+  width: 80vw !important;
+  background-color: lightcoral !important;
+  margin: 0 10vw;
+}
+
+.app_image {
+  margin: 0 5vw;
+  width: 70vw;
+}
+
+.slides {
+  position: relative;
+}
+
+.slides .slick-prev,
+.slides .slick-next {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+}
+
+.slides .slick-prev {
+  left: 12%;
+}
+
+.slides .slick-next {
+  right: 12%;
+}
+
+.app_imageContainer2 {
+  width: 80vw !important;
+  margin: 0 10vw;
+  margin-top: 100px;
+}
+
+.app_imageContainer2_block {
+  background-color: lightcoral !important;
+  padding: 0 2.5vw;
+}
+
+.app_image2 {
+  width: 35vw;
+}
+
+.slides2 .slick-prev,
+.slides2 .slick-next {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+}
+
+.slides2 .slick-prev {
+  left: 1%;
+}
+
+.slides2 .slick-next {
+  right: 1%;
+}
