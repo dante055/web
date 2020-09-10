@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  min-width: 100vw;
   background-color: rgb(15, 20, 26);
   align-items: center;
   overflow-x: scroll;
@@ -39,6 +40,17 @@
 .header_logo {
   margin: 5px 10px;
   border: 1px solid rgb(15, 20, 26);
+}
+
+.header_logo2 {
+  display: flex;
+  justify-content: center;
+}
+
+.header_logo2_link {
+  width: 130px;
+  object-fit: contain;
+  margin: 10px 0;
 }
 
 .header_logo_link {

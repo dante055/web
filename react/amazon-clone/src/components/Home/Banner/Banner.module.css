@@ -1,0 +1,32 @@
+.banner_container {
+  /* width: 90vw;
+  margin: 0 5vw; */
+}
+
+.banner_image {
+  width: 100%;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+  object-fit: contain;
+}
+
+/* 
+ not working whit css modules
+.slides {
+  position: relative;
+}
+
+.slides .slick-prev,
+.slides .slick-next {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+}
+
+.slides .slick-prev {
+  left: 12%;
+}
+
+.slides .slick-next {
+  right: 12%;
+} 
+*/
