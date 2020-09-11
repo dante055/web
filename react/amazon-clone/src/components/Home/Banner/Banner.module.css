@@ -1,12 +1,12 @@
 .banner_container {
-  /* width: 90vw;
-  margin: 0 5vw; */
+  width: 100vw;
 }
 
 .banner_image {
   width: 100%;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   object-fit: contain;
+  z-index: -1;
 }
 
 /* 
