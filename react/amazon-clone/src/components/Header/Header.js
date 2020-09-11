@@ -11,8 +11,18 @@ import {
 } from './icons.js';
 import styles from './Header.module.css';
 
+import { useStateValue } from '../../context/StateProvider';
+
 function Header() {
   const { pathname } = useLocation();
+  const {
+    cart: { totalCartItems },
+  } = useStateValue();
+  // const {
+  //   cart: { basket, totalCartItems },
+  // } = useStateValue();
+  // console.log(basket, totalCartItems);
+
   return (
     <>
       {pathname === '/' || pathname === '/basket' ? (
@@ -64,7 +74,7 @@ function Header() {
                     styles.header_basketCount
                   )}
                 >
-                  0
+                  {totalCartItems}
                 </span>
               </div>
             </Link>
