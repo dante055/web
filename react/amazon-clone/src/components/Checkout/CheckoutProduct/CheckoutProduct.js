@@ -7,6 +7,7 @@ import styles from './CheckoutProduct.module.css';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import { IconButton } from '@material-ui/core';
+import SubTotal from '../SubTotal/SubTotal';
 
 function CheckoutProduct({ id, quantity }) {
   const { dispatch } = useStateValue();
@@ -28,15 +29,19 @@ function CheckoutProduct({ id, quantity }) {
   }, []);
 
   const addToCart = () => {
-    dispatch({ type: 'ADD_TO_BASKET', itemId: id });
+    dispatch({ type: 'ADD_TO_BASKET', itemId: id, price: product.price });
   };
 
   const removeFromCart = () => {
-    dispatch({ type: 'REMOVE_FROM_BASKET', itemId: id });
+    dispatch({ type: 'REMOVE_FROM_BASKET', itemId: id, price: product.price });
   };
 
   const removeFromCartCompletely = () => {
-    dispatch({ type: 'REMOVE_FROM_BASKET_COMPLETELY', itemId: id });
+    dispatch({
+      type: 'REMOVE_FROM_BASKET_COMPLETELY',
+      itemId: id,
+      price: product.price,
+    });
   };
 
   return (
@@ -47,15 +52,17 @@ function CheckoutProduct({ id, quantity }) {
       <div className={styles.checkoutProduct_info}>
         <div className={styles.checkoutProduct_title}>{product.title}</div>
         <div className={styles.checkoutProduct_price}>
-          <span>{product.price}</span>
-          <span className={styles.checkoutProduct_priceSign}>$</span>
-          <div className={styles.checkoutProduct_rating}>
-            {Array(product.rating)
-              .fill()
-              .map((_, index) => (
-                <span key={index}>🌟 </span>
-              ))}
+          <div className={styles.checkoutProduct_singlePoductPrice}>
+            <span>Price : {product.price}</span>
+            <span className={styles.checkoutProduct_priceSign}>$</span>
           </div>
+        </div>
+        <div className={styles.checkoutProduct_rating}>
+          {Array(product.rating)
+            .fill()
+            .map((_, index) => (
+              <span key={index}>🌟 </span>
+            ))}
         </div>
         <div className={styles.checkoutProduct_quatity}>
           <span>Quantity : </span>
@@ -69,6 +76,12 @@ function CheckoutProduct({ id, quantity }) {
             </IconButton>
           </div>
         </div>
+        {quantity > 1 ? (
+          <div className={styles.checkoutProduct_totalPoductPrice}>
+            <span>SubTotal : {quantity * product.price}</span>
+            <span className={styles.checkoutProduct_priceSign}>$</span>
+          </div>
+        ) : null}
         <div className={styles.checkoutProduct_removeButton}>
           <button onClick={removeFromCartCompletely}>Delete from Cart</button>
         </div>

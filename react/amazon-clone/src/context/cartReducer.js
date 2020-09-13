@@ -6,11 +6,12 @@ const cartInitialState = sessionStorage.getItem('cart')
       cart: {
         basket: {}, // id: {quantity:}
         totalCartItems: 0,
+        subTotal: 0,
       },
     };
 
 const cartReducer = (state, action) => {
-  const { type, itemId } = action;
+  const { type, itemId, price } = action;
   let tempCart;
   switch (type) {
     case 'ADD_TO_BASKET':
@@ -21,6 +22,7 @@ const cartReducer = (state, action) => {
             [itemId]: { quantity: state.cart.basket[itemId].quantity + 1 },
           },
           totalCartItems: state.cart.totalCartItems + 1,
+          subTotal: state.cart.subTotal + price,
         };
       } else {
         tempCart = {
@@ -29,6 +31,7 @@ const cartReducer = (state, action) => {
             [itemId]: { quantity: 1 },
           },
           totalCartItems: state.cart.totalCartItems + 1,
+          subTotal: state.cart.subTotal + price,
         };
       }
       sessionStorage.setItem('cart', JSON.stringify(tempCart));
@@ -40,6 +43,7 @@ const cartReducer = (state, action) => {
           [itemId]: { quantity: state.cart.basket[itemId].quantity - 1 },
         },
         totalCartItems: state.cart.totalCartItems - 1,
+        subTotal: state.cart.subTotal - price,
       };
       if (tempCart.basket[itemId].quantity === 0) {
         delete tempCart.basket[itemId];
@@ -51,6 +55,8 @@ const cartReducer = (state, action) => {
         ...state.cart,
         totalCartItems:
           state.cart.totalCartItems - state.cart.basket[itemId].quantity,
+        subTotal:
+          state.cart.subTotal - state.cart.basket[itemId].quantity * price,
       };
       delete tempCart.basket[itemId];
       sessionStorage.setItem('cart', JSON.stringify(tempCart));

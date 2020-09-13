@@ -6,7 +6,7 @@ function Product({ id, title, price, rating, image }) {
   const { dispatch } = useStateValue();
 
   const addToCart = () => {
-    dispatch({ type: 'ADD_TO_BASKET', itemId: id });
+    dispatch({ type: 'ADD_TO_BASKET', itemId: id, price: price });
   };
   return (
     <div className={styles.product}>

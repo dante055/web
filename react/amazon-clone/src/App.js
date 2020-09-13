@@ -6,6 +6,7 @@ import {
   SignIn,
   SignUp,
   Checkout,
+  Payment,
   Error,
 } from './components/index';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -22,6 +23,7 @@ function App() {
           <Route path='/signin' exact component={SignIn} />
           <Route path='/signup' exact component={SignUp} />
           <Route path='/checkout' exact component={Checkout} />
+          <Route path='/payment' exact component={Payment} />
           <Route component={Error} />
         </Switch>
       </Router>
