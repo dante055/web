@@ -8,6 +8,7 @@ import {
   Checkout,
   Payment,
   Error,
+  Footer,
 } from './components/index';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -16,17 +17,20 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <div className={styles.app}>
-      <Router>
-        <Header />
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/signin' exact component={SignIn} />
-          <Route path='/signup' exact component={SignUp} />
-          <Route path='/checkout' exact component={Checkout} />
-          <Route path='/payment' exact component={Payment} />
-          <Route component={Error} />
-        </Switch>
-      </Router>
+      <div className={styles.app_main}>
+        <Router>
+          <Header />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/signin' exact component={SignIn} />
+            <Route path='/signup' exact component={SignUp} />
+            <Route path='/checkout' exact component={Checkout} />
+            <Route path='/payment' exact component={Payment} />
+            <Route component={Error} />
+          </Switch>
+        </Router>
+      </div>
+      <Footer />
     </div>
   );
 }
