@@ -4,10 +4,10 @@ import './css/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { StateProvider } from './context/StateProvider';
-import { cartInitialState, cartReducer } from './context/cartReducer.js';
+import { initialState, reducer } from './context/reducer.js';
 
 ReactDOM.render(
-  <StateProvider initialState={cartInitialState} reducer={cartReducer}>
+  <StateProvider initialState={initialState} reducer={reducer}>
     <App />
   </StateProvider>,
   document.getElementById('root')

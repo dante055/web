@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './css/App.module.css';
 import {
   Header,
@@ -11,10 +11,30 @@ import {
   Footer,
 } from './components/index';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { auth } from './utils/firebase.config.js';
+import { useStateValue } from './context/StateProvider';
 
 // you can optimize images by resizing and compressing them
 
 function App() {
+  const { dispatch } = useStateValue();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(async authUser => {
+      if (authUser) {
+        // log in
+        dispatch({ type: 'SET_USER', user: authUser });
+      } else {
+        // log out
+        dispatch({ type: 'SET_USER', user: null });
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
   return (
     <div className={styles.app}>
       <div className={styles.app_main}>

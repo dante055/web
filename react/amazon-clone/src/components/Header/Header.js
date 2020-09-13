@@ -12,16 +12,25 @@ import {
 import styles from './Header.module.css';
 
 import { useStateValue } from '../../context/StateProvider';
+import { auth } from '../../utils/firebase.config';
 
 function Header() {
   const { pathname } = useLocation();
   const {
     cart: { totalCartItems },
+    user,
   } = useStateValue();
   // const {
   //   cart: { basket, totalCartItems },
   // } = useStateValue();
   // console.log(basket, totalCartItems);
+
+  const signOut = () => {
+    if (user) {
+      console.log('signout');
+      auth.signOut();
+    }
+  };
 
   return (
     <>
@@ -46,10 +55,15 @@ function Header() {
             <SearchIcon className={styles.header_searchIcon} />
           </div>
           <div className={styles.header_navRight}>
-            <Link to='/signin' className={styles.header_link}>
-              <div className={styles.header_navOptions}>
-                <span className={styles.header_lineOne}>hello</span>
-                <span className={styles.header_lineTwo}>sign in</span>
+            <Link to={!user && '/signin'} className={styles.header_link}>
+              <div onClick={signOut} className={styles.header_navOptions}>
+                <span className={styles.header_lineOne}>
+                  {user ? `hello, ${user.email}` : 'hello'}
+                </span>
+
+                <span className={styles.header_lineTwo}>
+                  {user ? 'sign out' : 'sign in'}
+                </span>
               </div>
             </Link>
             <Link to='notCreated' className={styles.header_link}>

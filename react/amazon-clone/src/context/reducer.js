@@ -1,4 +1,4 @@
-const cartInitialState = sessionStorage.getItem('cart')
+const initialState = sessionStorage.getItem('cart')
   ? {
       cart: JSON.parse(sessionStorage.getItem('cart')),
     }
@@ -10,10 +10,12 @@ const cartInitialState = sessionStorage.getItem('cart')
       },
     };
 
-const cartReducer = (state, action) => {
+const reducer = (state, action) => {
   const { type, itemId, price } = action;
   let tempCart;
   switch (type) {
+    case 'SET_USER':
+      return { ...state, user: action.user };
     case 'ADD_TO_BASKET':
       if (state.cart.basket[itemId]) {
         tempCart = {
@@ -66,7 +68,7 @@ const cartReducer = (state, action) => {
   }
 };
 
-export { cartInitialState, cartReducer };
+export { initialState, reducer };
 
 /* 
     const cartInitialState = {
