@@ -25,7 +25,7 @@ function Header() {
 
   return (
     <>
-      {pathname === '/' || pathname === '/basket' ? (
+      {pathname === '/' || pathname === '/checkout' ? (
         <nav className={styles.header}>
           <div className={styles.header_navLeft}>
             <MenuIcon className={styles.header_menu} />
@@ -65,7 +65,7 @@ function Header() {
               </div>
             </Link>
 
-            <Link to='/basket' className={styles.header_link}>
+            <Link to='/checkout' className={styles.header_link}>
               <div className={styles.header_navOptionsNasket}>
                 <ShoppingBasketIcon />
                 <span

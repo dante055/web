@@ -5,7 +5,7 @@ import {
   Home,
   SignIn,
   SignUp,
-  Basket,
+  Checkout,
   Error,
 } from './components/index';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -21,7 +21,7 @@ function App() {
           <Route path='/' exact component={Home} />
           <Route path='/signin' exact component={SignIn} />
           <Route path='/signup' exact component={SignUp} />
-          <Route path='/basket' exact component={Basket} />
+          <Route path='/checkout' exact component={Checkout} />
           <Route component={Error} />
         </Switch>
       </Router>

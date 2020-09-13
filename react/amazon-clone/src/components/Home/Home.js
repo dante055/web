@@ -4,6 +4,8 @@ import styles from './Home.module.css';
 import Product from './Product/Product.js';
 import axios from 'axios';
 
+import { products as testProducts } from '../../utils/products.js';
+
 function Home() {
   const [products, setProducts] = useState([]);
   // const [startIndex, setStartIndex] = useState(0)
@@ -23,7 +25,8 @@ function Home() {
           setProducts(products);
         }
       } catch (error) {
-        console.log(error);
+        // console.log(error);
+        setProducts(testProducts);
       }
     })();
   }, []);
@@ -32,7 +35,7 @@ function Home() {
     <div className={styles.home}>
       <Banner />
       <div className={styles.home_product}>
-        {Array((products.length / 5) * 2)
+        {Array(Math.floor(products.length / 5) * 2)
           .fill()
           .map((_, index) => {
             let i;
@@ -42,14 +45,14 @@ function Home() {
                 <div key={index} className={styles.home_productRow}>
                   {products
                     .slice(i, i + 2)
-                    .map(({ id, title, price, image }) => {
+                    .map(({ id, title, price, image, rating }) => {
                       return (
                         <Product
                           key={id}
                           id={id}
                           title={title}
                           price={price}
-                          rating={4}
+                          rating={rating ? rating : 2}
                           image={image}
                         />
                       );

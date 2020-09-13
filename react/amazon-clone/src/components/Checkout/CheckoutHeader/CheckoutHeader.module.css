@@ -1,0 +1,7 @@
+.checkoutHeader_image {
+  width: 100%;
+  height: 30vh;
+  /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));     */
+  object-fit: contain;
+  z-index: -1;
+}

@@ -11,9 +11,9 @@ const cartInitialState = sessionStorage.getItem('cart')
 
 const cartReducer = (state, action) => {
   const { type, itemId } = action;
+  let tempCart;
   switch (type) {
     case 'ADD_TO_BASKET':
-      let tempCart;
       if (state.cart.basket[itemId]) {
         tempCart = {
           basket: {
@@ -34,8 +34,27 @@ const cartReducer = (state, action) => {
       sessionStorage.setItem('cart', JSON.stringify(tempCart));
       return { ...state, cart: JSON.parse(sessionStorage.getItem('cart')) };
     case 'REMOVE_FROM_BASKET':
-      // remove from basket
-      break;
+      tempCart = {
+        basket: {
+          ...state.cart.basket,
+          [itemId]: { quantity: state.cart.basket[itemId].quantity - 1 },
+        },
+        totalCartItems: state.cart.totalCartItems - 1,
+      };
+      if (tempCart.basket[itemId].quantity === 0) {
+        delete tempCart.basket[itemId];
+      }
+      sessionStorage.setItem('cart', JSON.stringify(tempCart));
+      return { ...state, cart: JSON.parse(sessionStorage.getItem('cart')) };
+    case 'REMOVE_FROM_BASKET_COMPLETELY':
+      tempCart = {
+        ...state.cart,
+        totalCartItems:
+          state.cart.totalCartItems - state.cart.basket[itemId].quantity,
+      };
+      delete tempCart.basket[itemId];
+      sessionStorage.setItem('cart', JSON.stringify(tempCart));
+      return { ...state, cart: JSON.parse(sessionStorage.getItem('cart')) };
     default:
       return state;
   }

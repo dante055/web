@@ -1,0 +1,24 @@
+.checkoutSlides {
+  position: relative;
+}
+
+.checkoutSlides .slick-prev,
+.checkoutSlides .slick-next {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+  font-size: 25px !important;
+}
+
+.checkoutSlides .slick-prev {
+  left: 5%;
+}
+
+.checkoutSlides .slick-next {
+  right: 5%;
+}

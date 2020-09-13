@@ -21,12 +21,13 @@
 
 .product_priceSign {
   margin-left: 3px;
+  font-size: 14px;
   font-weight: bold;
 }
 
 .product_rating {
   margin-bottom: 10px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .product_image > img {
