@@ -1,0 +1,197 @@
+@font-face {
+  font-family: 'Creepy';
+  src: local('Creepy'), url(./assets/fonts/Creepy.woff) format('woff'),
+    url('assets/fonts/Creepy.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lunacy';
+  src: local('Lunacy'), url(./assets/fonts/Lunacy.woff) format('woff'),
+    url('assets/fonts/Lunacy.woff2') format('woff2');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  cursor: url('./assets/cursors/Ghost.cur'), auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(#9d5900, #3d2200);
+}
+
+.page-title {
+  color: #ff6d00;
+  font-family: Creepy, serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 6em;
+}
+
+.startUp-screen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.startUp-screen--visible {
+  display: flex;
+  animation: overlay-grow 500ms forwards;
+}
+
+.overlay-text {
+  color: #ff6d00;
+  font-family: Creepy, serif;
+  transform: scale(0.9);
+  transition: transform 500ms ease-in-out;
+}
+
+.overlay-text:hover {
+  cursor: url('./assets/cursors/GhostHover.cur'), auto;
+  transform: scale(1);
+}
+
+.difficulty-level {
+  font-family: 'Lunacy', serif;
+  color: #ffbb89;
+  font-size: 0.5em;
+}
+
+.difficulty-level-choice li {
+  list-style: none;
+  margin: 10px;
+  transform: scale(0.8);
+  transition: transform 400ms ease-in-out;
+}
+
+.difficulty-level--selected {
+  color: #ff6d00;
+  transform: scale(0.9) !important;
+}
+
+.difficulty-level-choice:hover .difficulty-level--selected {
+  color: #ffbb89;
+}
+
+.difficulty-level-choice li:hover {
+  cursor: url('./assets/cursors/GhostHover.cur'), auto;
+  color: #ff6d00 !important;
+  transform: scale(1) !important;
+}
+
+.gameEnd-screen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.gameEnd-screen--visible {
+  display: flex;
+  animation: overlay-grow 500ms forwards;
+}
+
+.ovlerlay-gameOver-text {
+  color: #ff6d00;
+  font-family: Creepy, serif;
+}
+
+.restart-game {
+  font-family: 'Lunacy', serif;
+  color: #ffbb89;
+  font-size: 0.7em;
+  transform: scale(0.9);
+  transition: transform 400ms ease-in-out;
+  margin-top: 5%;
+}
+
+.restart-game:hover {
+  color: #ff6d00;
+  cursor: url('./assets/cursors/GhostHover.cur'), auto;
+  transform: scale(1);
+}
+
+.game-container {
+  margin: 20px 100px;
+}
+
+.game-info-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Lunacy', serif;
+  color: #ffbb89;
+  font-size: 4em;
+  margin-bottom: 30px;
+}
+
+.game-info-timeRemaining {
+}
+
+.game-info-flips {
+}
+
+.game-cards {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  justify-content: space-between;
+  perspective: 500px;
+}
+
+@keyframes overlay-grow {
+  from {
+    background-color: rgb(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgb(0, 0, 0, 0.8);
+    font-size: 10em;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .page-title {
+    font-size: 4em;
+  }
+
+  .game-container {
+    margin: 20px 20px;
+  }
+
+  .game-info-container {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+
+  @keyframes overlay-grow {
+    to {
+      background-color: rgb(0, 0, 0, 0.8);
+      font-size: 6em;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .game-cards {
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-around;
+  }
+}

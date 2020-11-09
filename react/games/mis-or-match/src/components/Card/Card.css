@@ -1,0 +1,119 @@
+.card {
+  position: relative;
+  height: 175px;
+  width: 125px;
+}
+
+.card:hover {
+  cursor: url('../../assets/cursors/GhostHover.cur'), auto;
+}
+
+.card-face {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+
+  /* so we cant see the back facing side i.(card-front after rotateX)  */
+  backface-visibility: hidden;
+  transition: transform 500ms ease-in-out;
+}
+
+.card-back {
+  background-color: black;
+  border-color: #ff6d00;
+  transform: rotateY(0);
+}
+
+.card-front {
+  background-color: #ffbb89;
+  border-color: #333;
+  /* now we have the back facing to us */
+  transform: rotateY(180deg);
+}
+
+/* to show front */
+.card-front--visible .card-back {
+  transform: rotateY(-180deg);
+}
+
+.card-front--visible .card-front {
+  transform: rotateY(0);
+}
+
+.cob-web {
+  position: absolute;
+  transition: width 100ms ease-in-out, height 100ms ease-in-out;
+  width: 47px;
+  height: 47px;
+}
+
+.card-face:hover .cob-web {
+  width: 52px;
+  height: 52px;
+}
+
+.cob-web-top-left {
+  transform: rotate(270deg);
+  top: 0;
+  left: 0;
+}
+
+.cob-web-top-right {
+  top: 0;
+  right: 0;
+}
+
+.cob-web-bottom-left {
+  transform: rotate(180deg);
+  bottom: 0;
+  left: 0;
+}
+
+.cob-web-bottom-right {
+  transform: rotate(90deg);
+  bottom: 0;
+  right: 0;
+}
+
+.spider {
+  align-self: flex-start;
+  transform: translateY(-10px);
+  transition: transform 100ms ease-in-out;
+}
+
+.card-back:hover .spider {
+  transform: translateY(0);
+}
+
+.card-value {
+  transform: scale(0.9);
+  transition: transform 100ms ease-in-out;
+}
+
+.card-front:hover .card-value {
+  transform: scale(1);
+}
+
+.card--matched .card-value {
+  animation: dance 1s linear infinite 500ms;
+}
+
+@keyframes dance {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+}
