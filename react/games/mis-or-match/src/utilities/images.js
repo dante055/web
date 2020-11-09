@@ -12,13 +12,53 @@ import Skull from '../assets/images/Skull.png';
 
 export { Cobweb, CobwebGrey, Spider };
 
-export const imageSrc = [
-  Bat,
-  Bones,
-  Cauldron,
-  Dracula,
-  Eye,
-  Ghost,
-  Pumpkin,
-  Skull,
+export const cardDetaildObjArr = [
+  {
+    img: Bat,
+    value: 'bat',
+    faceUp: false,
+    matched: false,
+  },
+  {
+    img: Bones,
+    value: 'bones',
+    faceUp: false,
+    matched: false,
+  },
+  {
+    img: Cauldron,
+    value: 'cauldron',
+    faceUp: false,
+    matched: false,
+  },
+  {
+    img: Dracula,
+    value: 'dracula',
+    faceUp: false,
+    matched: false,
+  },
+  {
+    img: Eye,
+    value: 'eye',
+    faceUp: false,
+    matched: false,
+  },
+  {
+    img: Ghost,
+    value: 'ghost',
+    faceUp: false,
+    matched: false,
+  },
+  {
+    img: Pumpkin,
+    value: 'pumpkin',
+    faceUp: false,
+    matched: false,
+  },
+  {
+    img: Skull,
+    value: 'skull',
+    faceUp: false,
+    matched: false,
+  },
 ];

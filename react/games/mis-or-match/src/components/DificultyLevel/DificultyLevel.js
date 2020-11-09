@@ -7,19 +7,21 @@ function DificultyLevel() {
     <div className='difficulty-level'>
       <ul className='difficulty-level-choice'>
         <li
-          className={dificulty === 'easy' && `difficulty-level--selected`}
+          className={`${dificulty === 'easy' && 'difficulty-level--selected'}`}
           onClick={() => dispatch({ type: 'EASY' })}
         >
           Easy
         </li>
         <li
-          className={dificulty === 'medium' && `difficulty-level--selected`}
+          className={`${
+            dificulty === 'medium' && 'difficulty-level--selected'
+          }`}
           onClick={() => dispatch({ type: 'MEDIUM' })}
         >
           Medium
         </li>
         <li
-          className={dificulty === 'hard' && `difficulty-level--selected`}
+          className={`${dificulty === 'hard' && 'difficulty-level--selected'}`}
           onClick={() => dispatch({ type: 'HARD' })}
         >
           Hard
