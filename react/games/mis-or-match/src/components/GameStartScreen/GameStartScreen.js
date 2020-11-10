@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DificultyLevel from '../DificultyLevel/DificultyLevel';
 import { useStateValue } from '../../context/StateProvider';
 
 function GameStartScreen() {
-  const { showGameStartScreen, dispatch } = useStateValue();
+  const { showGameStartScreen, dispatch, dificulty } = useStateValue();
+
+  useEffect(() => {
+    dispatch({ type: 'SET_INITIAL_DECK' });
+  }, [dificulty]);
 
   return (
     <div

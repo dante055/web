@@ -114,9 +114,48 @@ body {
   font-family: Creepy, serif;
 }
 
-.restart-game {
+.game-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-results-heading {
+  color: #a31c13;
+  font-size: 0.37em;
+  font-family: Creepy, serif;
+}
+
+.game-results-heading--won {
+  color: #114e05;
+}
+
+.game-results-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  font-size: 0.3em;
+  color: #e7901f;
   font-family: 'Lunacy', serif;
-  color: #ffbb89;
+}
+
+.game-results-info > span {
+  font-size: 1.1em;
+  color: #d8782f;
+  font-family: 'Creepy', serif;
+}
+
+.game-results-info div {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.restart-game {
+  font-family: 'Creepy', serif;
+  color: #d8782f;
   font-size: 0.7em;
   transform: scale(0.9);
   transition: transform 400ms ease-in-out;

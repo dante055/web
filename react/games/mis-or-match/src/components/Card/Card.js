@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import './Card.css';
 import { Cobweb, CobwebGrey, Spider } from '../../utilities/images';
 

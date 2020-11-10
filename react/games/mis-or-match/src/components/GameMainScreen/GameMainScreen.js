@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Card from '../Card/Card';
 
 import { useStateValue } from '../../context/StateProvider';
@@ -10,29 +10,36 @@ function GameMainScreen() {
     showGameStartScreen,
     timeRemaining,
     flipCount,
+    matchedCount,
     firstCard,
     secondCard,
   } = useStateValue();
 
-  useEffect(() => {
-    dispatch({ type: 'SET_INITIAL_DECK' });
-  }, []);
+  const intervalRef = useRef();
 
   useEffect(() => {
     if (showGameStartScreen === false) {
-      let interval = setInterval(function () {
+      intervalRef.current = setInterval(function () {
         if (timeRemaining <= 0) {
           dispatch({ type: 'SET_GAME_STATE', showGameEndScreen: true });
-          clearInterval(interval);
+          dispatch({ type: 'SET_GAME_RESULT', gameResult: 'YOU LOSE' });
+          clearInterval(intervalRef.current);
           return;
         }
+        if (matchedCount === deck.length / 2 && deck.length !== 0) {
+          dispatch({ type: 'SET_GAME_STATE', showGameEndScreen: true });
+          dispatch({ type: 'SET_GAME_RESULT', gameResult: 'YOU WON' });
+          clearInterval(intervalRef.current);
+          return;
+        }
+
         dispatch({ type: 'SET_TIME_REMAINING' });
       }, 1000);
       return () => {
-        clearInterval(interval);
+        clearInterval(intervalRef.current);
       };
     }
-  }, [timeRemaining, showGameStartScreen]);
+  }, [timeRemaining, matchedCount, showGameStartScreen]);
 
   const flipCardTo = (cardIdx, faceUp, ...multiFlipArr) => {
     const tempDeck = deck.map(obj => Object.assign({}, obj));
@@ -56,6 +63,7 @@ function GameMainScreen() {
     tempDeck[cardIdx2].faceUp = true;
 
     dispatch({ type: 'SET_DECK', deck: tempDeck });
+    dispatch({ type: 'SET_MATCHED_COUNT' });
   };
 
   const flipCard = cardIdx => {

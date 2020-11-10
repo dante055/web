@@ -2,7 +2,7 @@ import { RandomValuesArr } from '../utilities/utils';
 
 const initialState = {
   flipCount: 0,
-  timeRemaining: 10,
+  timeRemaining: 100,
   dificulty: 'easy',
   showGameStartScreen: true,
   showGameEndScreen: false,
@@ -10,6 +10,8 @@ const initialState = {
   firstCard: null,
   secondCard: null,
   //   showGameMainScreen: false,
+  matchedCount: 0,
+  gameResult: null,
 };
 
 const reducer = (state, action) => {
@@ -19,6 +21,7 @@ const reducer = (state, action) => {
     showGameEndScreen,
     firstCard,
     secondCard,
+    gameResult,
   } = action;
   switch (type) {
     case 'EASY':
@@ -47,10 +50,14 @@ const reducer = (state, action) => {
       return { ...state, timeRemaining: state.timeRemaining - 1 };
     case 'SET_FLIPS_COUNT':
       return { ...state, flipCount: state.flipCount + 1 };
+    case 'SET_MATCHED_COUNT':
+      return { ...state, matchedCount: state.matchedCount + 1 };
     case 'SET_FIRST_CARD':
       return { ...state, firstCard: firstCard };
     case 'SET_SECOND_CARD':
       return { ...state, secondCard: secondCard };
+    case 'SET_GAME_RESULT':
+      return { ...state, gameResult: gameResult };
     case 'RESET':
       return {
         ...state,
@@ -58,6 +65,8 @@ const reducer = (state, action) => {
         flipCount: initialState.flipCount,
         firstCard: initialState.firstCard,
         secondCard: initialState.secondCard,
+        matchedCount: initialState.matchedCount,
+        gameResult: initialState.gameResult,
         deck: RandomValuesArr(state.dificulty),
       };
 
