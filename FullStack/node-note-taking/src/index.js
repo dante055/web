@@ -20,7 +20,7 @@ const addCommandYargs = (command, describe, builder, fun) => {
     command,
     describe,
     builder,
-    handler: argv => {
+    handler(argv) {
       fun(argv);
     },
   });
