@@ -1,0 +1,28 @@
+extend base
+
+//- block append body
+    script(src='/js/signup.js')
+
+
+block content 
+    main.main
+        .form-container
+            h2.heading-secondary.ma-bt-lg Sign up for a account
+            form#signup-form.form
+                .form__group
+                    label.form__label(for='fullname') Full Name
+                    input#fullName.form__input(type='text', placeholder='FirstName LastName', required)
+                .form__group
+                    label.form__label(for='email') Email address
+                    input#email.form__input(type='email', placeholder='you@example.com', required)
+                .form__group.ma-bt-md
+                    label.form__label(for='password') Password
+                    input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')
+                .form__group.ma-bt-md
+                    label.form__label(for='password-confirm') Confirm Password
+                    input#password-confirm.form__input(type='password', placeholder='••••••••', required, minlength='8')
+                .form__group
+                    button.btn.btn--green Sign Up
+                //- make the confirpassword gree only when the both th password matched
+                //- wnable the submit buton when evry field is valid
+            
