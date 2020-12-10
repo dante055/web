@@ -75,7 +75,7 @@ exports.updateUserData = catchAsync(async (req, res, next) => {
 exports.resetPassword = catchAsync(async (req, res, next) => {
   // not implemented
   console.log('reset not implemented yet');
-  console.log('reset token : ', req.params.token);
+  // console.log('reset token : ', req.params.token);
 
   return next(new AppError('Route not impeleneted yet!', 404));
 

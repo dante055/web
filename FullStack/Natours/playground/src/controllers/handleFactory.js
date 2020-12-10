@@ -169,8 +169,6 @@ exports.updateOne = Model =>
       );
     }
 
-    console.log(doc);
-
     if (!doc) {
       return next(
         new AppError(

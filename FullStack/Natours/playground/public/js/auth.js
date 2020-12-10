@@ -2,7 +2,7 @@ import { axiosInstance } from './axios';
 import { showAlert } from './alert';
 
 export const signup = (fullname, email, password, confirmPassword) => {
-  console.log(fullname, email, password, confirmPassword);
+  console.log('sign up functionality is not added to the frontend it');
 };
 
 export const login = async (email, password) => {
