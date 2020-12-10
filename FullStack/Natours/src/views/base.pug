@@ -10,7 +10,7 @@ html(lang="en")
             link(rel='stylesheet' href='/css/style.css')
             script(src="https://js.stripe.com/v3/")
 
-    body
+    body(data-alert=`${alert ? alert : ''}`)
         block body
             //- header
             include _header

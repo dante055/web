@@ -3,6 +3,7 @@ import { signup, login, logout } from './auth';
 import { displayMap } from './mapbox';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
+import { showAlert } from './alert';
 
 const mapbox = document.querySelector('#map');
 const loginForm = document.querySelector('#login-form');
@@ -121,3 +122,6 @@ if (bookBtn) {
     bookTour(tourId);
   });
 }
+
+const alertMessage = document.querySelector('body').dataset.alert;
+if (alertMessage) showAlert('success', alertMessage, 20);

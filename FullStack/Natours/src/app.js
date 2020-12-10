@@ -76,6 +76,10 @@ app.use(cors());
 // for non simple request
 app.options('*', cors());
 
+// ------- weeb hook check out routre (will run when a payment is successfull) -------------------
+// we difine it here as we need the data in the raw foem not in json form
+// app.post('/webhook-checkout', express.raw({'type': 'application/json'}) bookingController.webhookCheckout)
+
 // ------ Body parser, reading data from body into req.body -----
 app.use(express.json({ limit: '10kb' }));
 
