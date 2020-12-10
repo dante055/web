@@ -9,6 +9,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
 
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -20,6 +21,9 @@ const globalErrorHandler = require('./controllers/errorController');
 
 // ------------ Create a new express app -------
 const app = express();
+
+// ------------ trust proxy for heroku ---------
+app.enable('trust proxy');
 
 // ------------ View middlwwares -----------
 app.set('view engine', 'pug');
@@ -66,6 +70,11 @@ app.use(
 
 // ----- Compress all the response ---------------
 app.user(compression());
+
+// ----- implement CORS-----------------------
+app.use(cors());
+// for non simple request
+app.options('*', cors());
 
 // ------ Body parser, reading data from body into req.body -----
 app.use(express.json({ limit: '10kb' }));

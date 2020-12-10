@@ -50,3 +50,11 @@ if (process.env.NODE_ENV === 'production') {
     });
   });
 }
+
+process.on('SIGTERM', err => {
+  console.log('💥 SIGTERM REJECTION! 💥 Shutting down gracefully...');
+  // close the server after handeling pending requests
+  server.close(() => {
+    console.log('Process Termited 💥 !');
+  });
+});

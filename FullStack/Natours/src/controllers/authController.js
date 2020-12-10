@@ -14,7 +14,7 @@ const signToken = id => {
 };
 
 // ---------- Create jwt token -----------
-const createSendToken = async (user, statusCode, res, sendBackUser) => {
+const createSendToken = async (user, statusCode, req, res, sendBackUser) => {
   const token = signToken(user._id);
 
   // http only cookie to store jwt token
@@ -23,8 +23,12 @@ const createSendToken = async (user, statusCode, res, sendBackUser) => {
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
   };
-  if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
+  // if request is secoure
+  // if (req.secure || req.headers['x-forwarded-proto'] === 'https')
+  //   cookieOptions.secure = true;
+  // if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
 
   res.cookie('jwt', token, cookieOptions);
 
@@ -55,7 +59,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
   const url = `${req.protocol}://${req.get('host')}/login`;
   await new Email(newUser, url).sendWelcome();
 
-  createSendToken(newUser, 201, res);
+  createSendToken(newUser, 201, req, res);
 });
 
 // --------- LOGIN ---------
@@ -344,7 +348,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   // we do this behid the sceens in them pre hook
 
   // 4. login the user, send jwt
-  createSendToken(user, 200, res, false);
+  createSendToken(user, 200, req, res, false);
 });
 
 // ----------- update user password (for currnet user and admin) -----------------
@@ -382,7 +386,7 @@ exports.updateUserPassword = catchAsync(async (req, res, next) => {
 
   if (!isAdmin || (isAdmin && userFilter === req.user.email)) {
     // 4. Login user. send JWT
-    return createSendToken(user, 200, res, false);
+    return createSendToken(user, 200, req, res, false);
   }
 
   res.status(200).json({
