@@ -1,21 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import useInputHook from '../../hooks/useInputHook';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import useInputHook from '../../../hooks/useInputHook';
+import { login } from '../../../stateManager/actions/authAction';
+import PropTypes from 'prop-types';
 
-function Login() {
+function Login({ login, isAuthenticated }) {
   const [email, bindEmail, resetEmail] = useInputHook('');
   const [password, bindPassword, resetPassword] = useInputHook('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (email && password) console.log('login');
-    else {
-      console.log('invalid credentials');
-    }
+    login({ email, password });
   };
 
+  // redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />;
+  }
+
   return (
-    <>
+    <section className='container'>
       <h1 className='large text-primary'>Log In</h1>
       <p className='lead'>
         <i className='fas fa-user'></i>
@@ -45,8 +50,19 @@ function Login() {
         Don't have an account?
         <Link to='signup'>Sign Up</Link>
       </p>
-    </>
+    </section>
   );
 }
 
-export default Login;
+Login.prototype = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+};
+
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+  };
+};
+
+export default connect(mapStateToProps, { login })(Login);

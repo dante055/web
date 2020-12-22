@@ -16,15 +16,6 @@ router.post(
   profileController.createUserProfile
 );
 
-// @route   DELETE api/v1/profiles
-// @desc    Delete you own profile when logged in
-// @access  Private
-router.delete(
-  '/',
-  authController.protect,
-  profileController.deleteLoggedInUserProfile
-);
-
 // @route   POST api/v1/profiles/addEducation
 // @desc    Add experience to profile
 // @access  Private

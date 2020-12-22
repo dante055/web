@@ -24,4 +24,9 @@ router.post(
   authController.logIn
 );
 
+// @route   GET api/v1/logout
+// @desc    login
+// @access  Public
+router.post('/logout', authController.protect, authController.logout);
+
 module.exports = router;

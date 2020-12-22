@@ -24,30 +24,30 @@ const filterSubDoc = (type, subDoc, req) => {
 };
 
 exports.createUserProfile = catchAsync(async (req, res, next) => {
+  console.log(req.body);
   // Get fields
   const profileFields = {};
+  profileFields.social = {};
   profileFields.user = req.user.id;
-  //   if (req.body.handle) profileFields.handle = req.body.handle;
-  if (req.body.company) profileFields.company = req.body.company;
-  if (req.body.website) profileFields.website = req.body.website;
-  if (req.body.location) profileFields.location = req.body.location;
-  if (req.body.bio) profileFields.bio = req.body.bio;
-  if (req.body.status) profileFields.status = req.body.status;
-  if (req.body.githubusername)
-    profileFields.githubusername = req.body.githubusername;
+
+  ['company', 'website', 'location', 'bio', 'status', 'githubusername'].forEach(
+    field => {
+      if (field in req.body) profileFields[field] = req.body[field];
+    }
+  );
+
+  ['youtube', 'twitter', 'facebook', 'linkedin', 'instagram'].forEach(field => {
+    if (field in req.body) profileFields.social[field] = req.body[field];
+  });
+
   // Skills - Spilt into array
   if (typeof req.body.skills !== 'undefined') {
     profileFields.skills = req.body.skills
       .split(',')
       .map(skill => skill.trim());
   }
-  // Social
-  profileFields.social = {};
-  if (req.body.youtube) profileFields.social.youtube = req.body.youtube;
-  if (req.body.twitter) profileFields.social.twitter = req.body.twitter;
-  if (req.body.facebook) profileFields.social.facebook = req.body.facebook;
-  if (req.body.linkedin) profileFields.social.linkedin = req.body.linkedin;
-  if (req.body.instagram) profileFields.social.instagram = req.body.instagram;
+
+  console.log(profileFields);
 
   let profile = await Profile.findOneAndUpdate(
     { user: req.user.id },
@@ -152,19 +152,6 @@ exports.getProfileById = type => {
   });
 };
 
-exports.deleteLoggedInUserProfile = catchAsync(async (req, res, next) => {
-  const profile = await Profile.findOneAndUpdate({ user: req.user.id });
-
-  if (!profile) {
-    return next(new AppError('There is no profile present this user!', 404));
-  }
-
-  res.status(204).json({
-    status: 'success',
-    data: null,
-  });
-});
-
 exports.deleteUserExperienceOrEcucation = type => {
   return catchAsync(async (req, res, next) => {
     const field = `${type}._id`;
@@ -189,10 +176,14 @@ exports.deleteUserExperienceOrEcucation = type => {
       );
     }
 
-    res.status(204).json({
+    res.status(200).json({
       status: 'success',
-      data: null,
+      profile,
     });
+    // res.status(204).json({
+    //   status: 'success',
+    //   data: null,
+    // });
   });
 };
 

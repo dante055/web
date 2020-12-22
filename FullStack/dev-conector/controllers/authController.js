@@ -9,14 +9,31 @@ const config = require('config');
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 
-const createJwtToken = user => {
+const createJwtToken = (user, statusCode, req, res) => {
   const payload = {
     user: {
       id: user.id,
     },
   };
-  return jwt.sign(payload, config.get('JWT_SECRET'), {
+
+  const token = jwt.sign(payload, config.get('JWT_SECRET'), {
     expiresIn: config.get('JWT_EXPIRES_IN'),
+  });
+
+  // http only cookie to store jwt token
+  const cookieOptions = {
+    sameSite: 'strict',
+    path: '/',
+    expires: new Date(
+      Date.now() + config.get('JWT_COOKIE_EXPIRES_IN') * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true,
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
+  };
+
+  res.status(statusCode).cookie('jwt', token, cookieOptions).json({
+    status: 'success',
+    token,
   });
 };
 
@@ -31,6 +48,9 @@ exports.protect = catchAsync(async (req, res, next) => {
   } else if (req.cookies.jwt) {
     token = req.cookies.jwt;
   }
+
+  console.log('inside protect');
+  console.log(req.cookies);
 
   if (!token) {
     return next(new AppError('No tokn, authoriztion declined!', 401));
@@ -67,9 +87,7 @@ exports.signUp = catchAsync(async (req, res) => {
     password: hashedPassword,
   });
 
-  const token = createJwtToken(user);
-
-  res.json({ status: 'succes', token, user });
+  createJwtToken(user, 201, req, res);
 });
 
 exports.logIn = catchAsync(async (req, res, next) => {
@@ -79,7 +97,13 @@ exports.logIn = catchAsync(async (req, res, next) => {
   if (!user || !(await bcrypt.compare(password, user.password))) {
     return next(new AppError('Invalid Credentials!, 400'));
   }
+  createJwtToken(user, 200, req, res);
+});
 
-  const token = createJwtToken(user);
-  res.json({ status: 'succes', token });
+exports.logout = catchAsync(async (req, res, next) => {
+  // res.cookie('jwt', 'loggedOut', {
+  //   expires: new Date(Date.now() + 10 * 1000), // 10 sec expiration
+  //   httpOnly: true,
+  // });
+  res.status(200).clearCookie('jwt').json({ status: 'success' });
 });

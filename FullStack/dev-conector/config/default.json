@@ -1,0 +1,6 @@
+{
+  "MONGO_URI": "mongodb+srv://devConnector:devConnectorPass@cluster0.mvepw.mongodb.net/dev-connector?retryWrites=true&w=majority",
+  "JWT_SECRET": "my-ulta-secure-and-ultra-long-secrect",
+  "JWT_EXPIRES_IN": "90d",
+  "JWT_COOKIE_EXPIRES_IN": "90"
+}

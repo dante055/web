@@ -1,5 +1,6 @@
 const express = require('express');
-
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const AppError = require('./utills/appError');
 
 // @desc start a new expresss app
@@ -7,6 +8,23 @@ const app = express();
 
 // @desc parse body middlware
 app.use(express.json({ extended: false }));
+
+// @cookie parser
+app.use(cookieParser());
+
+// #desc implement cors
+app.use(
+  cors({
+    credentials: true,
+    origin: ['http://localhost:3000', 'http://192.168.100.122'],
+  })
+);
+/* 
+app.use((req, res, next) => {
+  console.log(req.signedCookies);
+  console.log('cookie=', req.cookies);
+  next();
+}); */
 
 // @desc Define Routes
 app.use('/api/v1', require('./routes/api/authRoutes'));
