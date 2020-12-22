@@ -89,7 +89,7 @@ exports.login = catchAsync(async (req, res, next) => {
   }
 
   // 4. If everything is ok, then send the token to client
-  createSendToken(user, 200, res, false);
+  createSendToken(user, 200, req, res, false);
 });
 
 // --------- LOGOUT ---------
