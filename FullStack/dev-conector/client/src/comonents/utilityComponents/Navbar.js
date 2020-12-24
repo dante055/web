@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../../stateManager/actions/authAction';
 import PropTypes from 'prop-types';
@@ -7,6 +7,12 @@ import PropTypes from 'prop-types';
 function Navbar({ auth: { isAuthenticated, loading }, logout }) {
   const authLinks = (
     <ul>
+      <li>
+        <Link to='/profiles'>Developers</Link>
+      </li>
+      <li>
+        <Link to='/posts'>Posts</Link>
+      </li>
       <li>
         <Link to='/dashboard'>
           <i className='fas fa-user'></i>{' '}
@@ -25,13 +31,13 @@ function Navbar({ auth: { isAuthenticated, loading }, logout }) {
   const guestLinks = (
     <ul>
       <li>
-        <Link to='profiles'>Developers</Link>
+        <Link to='/profiles'>Developers</Link>
       </li>
       <li>
-        <Link to='signup'>Register</Link>
+        <Link to='/signup'>Register</Link>
       </li>
       <li>
-        <Link to='login'>Login</Link>
+        <Link to='/login'>Login</Link>
       </li>
     </ul>
   );

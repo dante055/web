@@ -23,8 +23,8 @@ const filterSubDoc = (type, subDoc, req) => {
   return subDoc;
 };
 
+// create and edit
 exports.createUserProfile = catchAsync(async (req, res, next) => {
-  console.log(req.body);
   // Get fields
   const profileFields = {};
   profileFields.social = {};
@@ -47,13 +47,14 @@ exports.createUserProfile = catchAsync(async (req, res, next) => {
       .map(skill => skill.trim());
   }
 
-  console.log(profileFields);
-
   let profile = await Profile.findOneAndUpdate(
     { user: req.user.id },
     profileFields,
     { new: true, runValidators: true }
-  );
+  ).populate({
+    path: 'user',
+    select: ['name', 'avatar'],
+  });
 
   if (!profile) profile = await Profile.create(profileFields);
 
@@ -115,15 +116,12 @@ exports.getAllProfiles = catchAsync(async (req, res, next) => {
   res.json({
     status: 'success',
     result: profiles.length,
-    data: {
-      profiles,
-    },
+    profiles,
   });
 });
 
 exports.getProfileById = type => {
   return catchAsync(async (req, res, next) => {
-    console.log(type);
     let query;
     if (type === 'userId')
       query = Profile.findOne({
@@ -229,12 +227,13 @@ exports.getGitHubAccount = catchAsync(async (req, res, next) => {
 
     const result = await axios.get(uri);
 
-    res.status(404).json({
+    res.status(200).json({
       status: 'success',
       result: result.data.length,
       repos: result.data,
     });
   } catch (error) {
+    console.log(error);
     let msg =
       error.response.status === 404
         ? 'No Github profile found for this username!'

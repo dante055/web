@@ -10,12 +10,17 @@ import {
   CreateEditProfile,
   AddExperience,
   AddEducation,
+  Profiles,
+  Profile,
+  Posts,
+  Post,
 } from './comonents/pages';
 import { Navbar, Alert } from './comonents/utilityComponents';
 // Redux
 import { Provider } from 'react-redux';
 import store from './stateManager/store';
 import { loadUser } from './stateManager/actions/authAction';
+import NotFound from './comonents/utilityComponents/NotFound';
 
 const App = () => {
   useEffect(() => {
@@ -31,18 +36,27 @@ const App = () => {
           <Route path='/' exact component={Landing} />
           <Route path='/login' exact component={Login} />
           <Route path='/signup' exact component={Register} />
+          <Route path='/profiles' exact component={Profiles} />
+          <Route path='/profile/:userId' exact component={Profile} />
           <PrivateRoute path='/dashboard' exact component={Dashboard} />
           <PrivateRoute
-            path={['/create-profile', '/edit-profile']}
+            path={['/dashboard/create-profile', '/dashboard/edit-profile']}
             exact
             component={CreateEditProfile}
           />
           <PrivateRoute
-            path='/add-experience'
+            path='/dashboard/add-experience'
             exact
             component={AddExperience}
           />
-          <PrivateRoute path='/add-education' exact component={AddEducation} />
+          <PrivateRoute
+            path='/dashboard/add-education'
+            exact
+            component={AddEducation}
+          />
+          <PrivateRoute path='/posts' exact component={Posts} />
+          <PrivateRoute path='/post/:postId' exact component={Post} />
+          <Route component={NotFound} />
         </Switch>
       </Router>
     </Provider>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  createProfile,
+  createEditProfile,
   getCurrentProfile,
 } from '../../../stateManager/actions/profileAction';
 import { Link } from 'react-router-dom';
@@ -24,7 +24,7 @@ const initialState = {
 
 const ProfileForm = ({
   profile: { profile, loading },
-  createProfile,
+  createEditProfile,
   getCurrentProfile,
   history,
 }) => {
@@ -67,7 +67,7 @@ const ProfileForm = ({
 
   const handleSubmit = e => {
     e.preventDefault();
-    createProfile(formData, history, profile ? true : false);
+    createEditProfile(formData, history, profile ? true : false);
   };
 
   const input = (type, placeholder, name, value, isRequired) => (
@@ -198,7 +198,7 @@ const ProfileForm = ({
 };
 
 ProfileForm.propTypes = {
-  createProfile: PropTypes.func.isRequired,
+  createEditProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
 };
@@ -207,6 +207,7 @@ const mapStateToProps = state => ({
   profile: state.profile,
 });
 
-export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  ProfileForm
-);
+export default connect(mapStateToProps, {
+  createEditProfile,
+  getCurrentProfile,
+})(ProfileForm);

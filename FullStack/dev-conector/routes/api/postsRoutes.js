@@ -81,7 +81,7 @@ router.patch(
   postController.updatePost
 );
 
-// @route   DELETE api/posts/:postId/comment/:commentId
+// @route   Update api/posts/:postId/comment/:commentId
 // @desc    delete the comment (only the user which has created the comment)
 // @access  private
 router.patch(

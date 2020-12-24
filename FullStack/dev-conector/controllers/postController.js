@@ -64,7 +64,11 @@ exports.getAllCurrentUserPost = catchAsync(async (req, res, next) => {
 exports.getAllPost = catchAsync(async (req, res, next) => {
   let query = Post.find();
 
-  if (req.query.sort) query = query.sort(req.query.sort);
+  if (req.query.sort) {
+    query = query.sort(req.query.sort);
+  } else {
+    query = query.sort('-date');
+  }
   if (req.query.user) query = query.find({ name: req.query.user });
   if (req.query.userId) query = query.find({ user: req.query.userId });
 
@@ -208,8 +212,6 @@ exports.deletePost = catchAsync(async (req, res, next) => {
     _id: req.params.postId,
     user: req.user.id,
   });
-
-  console.log(post);
 
   if (!post) {
     return next(

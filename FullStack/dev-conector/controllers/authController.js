@@ -49,9 +49,6 @@ exports.protect = catchAsync(async (req, res, next) => {
     token = req.cookies.jwt;
   }
 
-  console.log('inside protect');
-  console.log(req.cookies);
-
   if (!token) {
     return next(new AppError('No tokn, authoriztion declined!', 401));
   }

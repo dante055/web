@@ -20,8 +20,6 @@ const Dashboard = ({
     getCurrentProfile();
   }, []);
 
-  console.log(loading, profile);
-
   return loading && profile === null ? (
     <Spinner />
   ) : (
@@ -34,15 +32,15 @@ const Dashboard = ({
       {profile ? (
         <>
           <div className='dash-buttons'>
-            <Link to='edit-profile' className='btn'>
+            <Link to='/dashboard/edit-profile' className='btn'>
               <i className='fas fa-user-circle text-primary'></i>
               Edit Profile
             </Link>
-            <Link to='add-experience' className='btn'>
+            <Link to='/dashboard/add-experience' className='btn'>
               <i className='fab fa-black-tie text-primary'></i>
               Add Experience
             </Link>
-            <Link to='add-education' className='btn'>
+            <Link to='/dashboard/add-education' className='btn'>
               <i className='fas fa-graduation-cap text-primary'></i>
               Add Education
             </Link>

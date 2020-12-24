@@ -1,4 +1,3 @@
-import { Redirect } from 'react-router-dom';
 import { axiosInstance } from '../../utils/axios';
 import {
   REGISTER_SUCCESS,
@@ -77,7 +76,7 @@ export const login = ({ email, password }) => async dispatch => {
 // Logout
 export const logout = () => async dispatch => {
   try {
-    const res = await axiosInstance.post(
+    await axiosInstance.post(
       '/logout',
       {},
       {
