@@ -69,7 +69,7 @@ app.use(
 );
 
 // ----- Compress all the response ---------------
-app.user(compression());
+app.use(compression());
 
 // ----- implement CORS-----------------------
 app.use(cors());

@@ -8,7 +8,6 @@ const router = express.Router();
 // ---------------- Overvies page (render all tours) ----------------
 router.get(
   '/',
-  bookingController.createBookingCheckout,
   authController.isLoggedIn,
   viewsController.getOverview
 );
