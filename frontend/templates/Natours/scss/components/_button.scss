@@ -1,0 +1,111 @@
+%btn-placeholder {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  font-size: $default-font-size;
+  word-spacing: 0.5rem;
+
+  position: relative;
+  transition: all 0.2s;
+}
+
+.btn {
+  // for divs, input tyes (submit, etc) and labels
+  // & {
+  //   // transform scale isnt working on input fields
+  //   @extend %btn-placeholder;
+
+  //   line-height: inherit;
+  //   border: none;
+  //   outline: none;
+  //   cursor: pointer;
+  // }
+
+  &:link,
+  &:visited {
+    @extend %btn-placeholder;
+  }
+
+  // make btn big on hover then fade out
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%; /* with refrence to parent ie. btn */
+    width: 100%;
+    border-radius: 10rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2); /* x y blur color */
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; /* first btn will become big with trasition and then opacity will become 0 and it wont show */
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--animated {
+    animation: moveInTop 0.5s ease-out 0.75s; /* name duration timing-function dely */
+    animation-fill-mode: backwards; /* apply styles of 0% before the animation starts */
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 0.1rem solid $color-primary;
+    padding: 0.3rem;
+
+    transition: all 0.2s ease-out;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 10px 2rem rgba($color-black, 0.2);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 10px 1rem rgba($color-black, 0.2);
+    transform: translateY(0);
+  }
+}
