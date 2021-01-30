@@ -23,247 +23,247 @@ body {
 }
 
 .u-center-text {
-  text-align: center;
+  text-align: center !important;
 }
 
 .u-m-1 {
-  margin: 1rem;
+  margin: 1rem !important;
 }
 
 .u-my-1 {
-  margin: 1rem 0;
+  margin: 1rem 0 !important;
 }
 
 .u-mx-1 {
-  margin: 1rem 0;
+  margin: 1rem 0 !important;
 }
 
 .u-mt-1 {
-  margin-top: 1rem;
+  margin-top: 1rem !important;
 }
 
 .u-mb-1 {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 .u-p-1 {
-  padding: 1rem;
+  padding: 1rem !important;
 }
 
 .u-py-1 {
-  padding: 1rem 0;
+  padding: 1rem 0 !important;
 }
 
 .u-px-1 {
-  padding: 1rem 0;
+  padding: 1rem 0 !important;
 }
 
 .u-pt-1 {
-  padding-top: 1rem;
+  padding-top: 1rem !important;
 }
 
 .u-pb-1 {
-  padding-bottom: 1rem;
+  padding-bottom: 1rem !important;
 }
 
 .u-m-2 {
-  margin: 2rem;
+  margin: 2rem !important;
 }
 
 .u-my-2 {
-  margin: 2rem 0;
+  margin: 2rem 0 !important;
 }
 
 .u-mx-2 {
-  margin: 2rem 0;
+  margin: 2rem 0 !important;
 }
 
 .u-mt-2 {
-  margin-top: 2rem;
+  margin-top: 2rem !important;
 }
 
 .u-mb-2 {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem !important;
 }
 
 .u-p-2 {
-  padding: 2rem;
+  padding: 2rem !important;
 }
 
 .u-py-2 {
-  padding: 2rem 0;
+  padding: 2rem 0 !important;
 }
 
 .u-px-2 {
-  padding: 2rem 0;
+  padding: 2rem 0 !important;
 }
 
 .u-pt-2 {
-  padding-top: 2rem;
+  padding-top: 2rem !important;
 }
 
 .u-pb-2 {
-  padding-bottom: 2rem;
+  padding-bottom: 2rem !important;
 }
 
 .u-m-3 {
-  margin: 3rem;
+  margin: 3rem !important;
 }
 
 .u-my-3 {
-  margin: 3rem 0;
+  margin: 3rem 0 !important;
 }
 
 .u-mx-3 {
-  margin: 3rem 0;
+  margin: 3rem 0 !important;
 }
 
 .u-mt-3 {
-  margin-top: 3rem;
+  margin-top: 3rem !important;
 }
 
 .u-mb-3 {
-  margin-bottom: 3rem;
+  margin-bottom: 3rem !important;
 }
 
 .u-p-3 {
-  padding: 3rem;
+  padding: 3rem !important;
 }
 
 .u-py-3 {
-  padding: 3rem 0;
+  padding: 3rem 0 !important;
 }
 
 .u-px-3 {
-  padding: 3rem 0;
+  padding: 3rem 0 !important;
 }
 
 .u-pt-3 {
-  padding-top: 3rem;
+  padding-top: 3rem !important;
 }
 
 .u-pb-3 {
-  padding-bottom: 3rem;
+  padding-bottom: 3rem !important;
 }
 
 .u-m-4 {
-  margin: 4rem;
+  margin: 4rem !important;
 }
 
 .u-my-4 {
-  margin: 4rem 0;
+  margin: 4rem 0 !important;
 }
 
 .u-mx-4 {
-  margin: 4rem 0;
+  margin: 4rem 0 !important;
 }
 
 .u-mt-4 {
-  margin-top: 4rem;
+  margin-top: 4rem !important;
 }
 
 .u-mb-4 {
-  margin-bottom: 4rem;
+  margin-bottom: 4rem !important;
 }
 
 .u-p-4 {
-  padding: 4rem;
+  padding: 4rem !important;
 }
 
 .u-py-4 {
-  padding: 4rem 0;
+  padding: 4rem 0 !important;
 }
 
 .u-px-4 {
-  padding: 4rem 0;
+  padding: 4rem 0 !important;
 }
 
 .u-pt-4 {
-  padding-top: 4rem;
+  padding-top: 4rem !important;
 }
 
 .u-pb-4 {
-  padding-bottom: 4rem;
+  padding-bottom: 4rem !important;
 }
 
 .u-m-5 {
-  margin: 5rem;
+  margin: 5rem !important;
 }
 
 .u-my-5 {
-  margin: 5rem 0;
+  margin: 5rem 0 !important;
 }
 
 .u-mx-5 {
-  margin: 5rem 0;
+  margin: 5rem 0 !important;
 }
 
 .u-mt-5 {
-  margin-top: 5rem;
+  margin-top: 5rem !important;
 }
 
 .u-mb-5 {
-  margin-bottom: 5rem;
+  margin-bottom: 5rem !important;
 }
 
 .u-p-5 {
-  padding: 5rem;
+  padding: 5rem !important;
 }
 
 .u-py-5 {
-  padding: 5rem 0;
+  padding: 5rem 0 !important;
 }
 
 .u-px-5 {
-  padding: 5rem 0;
+  padding: 5rem 0 !important;
 }
 
 .u-pt-5 {
-  padding-top: 5rem;
+  padding-top: 5rem !important;
 }
 
 .u-pb-5 {
-  padding-bottom: 5rem;
+  padding-bottom: 5rem !important;
 }
 
 .u-m-8 {
-  margin: 8rem;
+  margin: 8rem !important;
 }
 
 .u-my-8 {
-  margin: 8rem 0;
+  margin: 8rem 0 !important;
 }
 
 .u-mx-8 {
-  margin: 8rem 0;
+  margin: 8rem 0 !important;
 }
 
 .u-mt-8 {
-  margin-top: 8rem;
+  margin-top: 8rem !important;
 }
 
 .u-mb-8 {
-  margin-bottom: 8rem;
+  margin-bottom: 8rem !important;
 }
 
 .u-p-8 {
-  padding: 8rem;
+  padding: 8rem !important;
 }
 
 .u-py-8 {
-  padding: 8rem 0;
+  padding: 8rem 0 !important;
 }
 
 .u-px-8 {
-  padding: 8rem 0;
+  padding: 8rem 0 !important;
 }
 
 .u-pt-8 {
-  padding-top: 8rem;
+  padding-top: 8rem !important;
 }
 
 .u-pb-8 {
-  padding-bottom: 8rem;
+  padding-bottom: 8rem !important;
 }
 
 @-webkit-keyframes moveInLeft {
@@ -400,7 +400,7 @@ body {
   margin-bottom: 3rem;
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -410,8 +410,10 @@ body {
   word-spacing: 0.5rem;
   position: relative;
   transition: all 0.2s;
+  line-height: inherit;
+  border: none;
+  cursor: pointer;
 }
-
 .btn::after {
   content: "";
   display: inline-block;
@@ -435,9 +437,16 @@ body {
   opacity: 0;
   /* first btn will become big with trasition and then opacity will become 0 and it wont show */
 }
-.btn:active {
+.btn:active, .btn:focus {
+  outline: none;
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn--small {
+  line-height: 1.6rem;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.4rem;
+  word-spacing: 0.3rem;
 }
 .btn--animated {
   -webkit-animation: moveInTop 0.5s ease-out 0.75s;
@@ -756,6 +765,100 @@ body {
      object-fit: cover;
 }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form__input {
+  font-size: 1.5rem;
+  color: inherit;
+  font-family: inherit;
+  /* input elemt dont inherit font properties directory */
+  padding: 1.5rem 2rem;
+  /* we give more padding to sides to make element look beter */
+  border-radius: 0.2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 0.3rem solid transparent;
+  width: 90%;
+  display: block;
+  transition: all 0.3s;
+}
+.form__input:focus {
+  outline: none;
+  /* never make outline only none as if u are useing keyboard to move then u want know where u are */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 0.3rem solid #55c57a;
+}
+.form__input:focus:invalid {
+  border-bottom: 0.3rem solid #ff7730;
+}
+.form__input::-webkit-input-placeholder {
+  color: #999;
+}
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+}
+.form__input:-moz-placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__input:-ms-input-placeholder + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__radio-group {
+  width: 49%;
+  display: inline-block;
+}
+.form__radio-input {
+  display: none;
+}
+.form__radio-label {
+  font-size: 1.6rem;
+  padding-left: 4.5rem;
+  position: relative;
+  cursor: pointer;
+}
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #55c57a;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+  /* inside dots, initially hidden */
+}
+.form__radio-button::after {
+  content: "";
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #55c57a;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1;
+}
+
 .header {
   position: relative;
   height: 95vh;
@@ -850,4 +953,22 @@ body {
 .section-stories {
   padding: 15rem 0;
   position: relative;
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  /* to rotate the gradient and to define its position*/
+  background-size: cover;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba(40, 180, 133, 0.2);
+  height: 50rem;
+}
+.book__form {
+  width: 50%;
+  padding: 6rem;
 }/*# sourceMappingURL=main.css.map */

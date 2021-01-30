@@ -1,31 +1,23 @@
-%btn-placeholder {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  font-size: $default-font-size;
-  word-spacing: 0.5rem;
-
-  position: relative;
-  transition: all 0.2s;
-}
-
 .btn {
-  // for divs, input tyes (submit, etc) and labels
-  // & {
-  //   // transform scale isnt working on input fields
-  //   @extend %btn-placeholder;
-
-  //   line-height: inherit;
-  //   border: none;
-  //   outline: none;
-  //   cursor: pointer;
-  // }
-
+  &,
   &:link,
   &:visited {
-    @extend %btn-placeholder;
+    // @extend %btn-placeholder;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    font-size: $default-font-size;
+    word-spacing: 0.5rem;
+
+    position: relative;
+    transition: all 0.2s;
+
+    // changes for <button>, and other, add outline none and shadaw on focus so if it visible if selected by keyboard
+    line-height: inherit;
+    border: none;
+    cursor: pointer;
   }
 
   // make btn big on hover then fade out
@@ -54,10 +46,19 @@
     }
   }
 
-  &:active {
+  // dont remove outline on focus only
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-0.1rem);
-
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--small {
+    line-height: 1.6rem;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.4rem;
+    word-spacing: 0.3rem;
   }
 
   &--animated {
