@@ -54,7 +54,9 @@
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
 
-  &--small {
+  &--small,
+  &--small:link,
+  &--small:visited {
     line-height: 1.6rem;
     padding: 1.2rem 2.5rem;
     font-size: 1.4rem;

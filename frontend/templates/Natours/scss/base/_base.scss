@@ -9,6 +9,7 @@
 
 html {
   font-size: 62.5%; /* root font size : 10px */
+  scroll-behavior: smooth; /* form smooth scrolling when moving btw section */
 }
 
 /* property here are inheried by childs */
