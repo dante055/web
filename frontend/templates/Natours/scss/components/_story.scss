@@ -15,22 +15,23 @@
     transform: skewX(12deg);
   } */
 
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
     float: left;
     position: relative;
+    border-radius: 50%; /* if clip part odont works */
     overflow: hidden; /* remove fliking line showing on transition due to skew and clip */
-
-    // clip path
-    --webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-
-    // flow text outside the circle
-    --webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(
-      50% at 50% 50%
-    ); /* radius (% or original height) at center, and works with float, and height and width has to be defined */
 
     /* to give padding to floated elememt best was is to translate */
     transform: translateX(-3rem) skewX(12deg);
@@ -39,6 +40,24 @@
     /* other way to give image */
     // background-size: cover;
     // background-image: url('../img/nat-8.jpg');
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      // clip path
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+
+      // flow text outside the circle
+      --webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(
+        50% at 50% 50%
+      ); /* radius (% or original height) at center, and works with float, and height and width has to be defined */
+
+      border-radius: none;
+    }
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__img {
@@ -50,6 +69,10 @@
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__caption {

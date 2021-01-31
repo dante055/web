@@ -5,6 +5,17 @@
 
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    // row margin bottom
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
+  }
+
+  // change row width
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
 
   @include clearfix;
@@ -15,6 +26,17 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      // remove margin right && add col margin bottom
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    // each colum : 100%
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
 

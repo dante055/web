@@ -9,9 +9,9 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/icon-font.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <!-- <link rel="stylesheet" href="css/icon-font.css" /> -->
+    <!-- <link rel="stylesheet" href="css/main.css" /> -->
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
     <title>Natours | Exciting tours for adventurous people</title>
@@ -84,7 +84,7 @@
 
     <main>
       <section class="section-about" id="section-about">
-        <div class="u-center-text u-mb-8">
+        <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">
             Exciting tours for adventurous people
           </h2>
@@ -92,7 +92,7 @@
 
         <div class="row">
           <div class="col-1-of-2">
-            <h3 class="heading-tertiary u-mb-1">
+            <h3 class="heading-tertiary u-margin-bottom-small">
               You'r going to fall in love with nature
             </h3>
             <p class="paragraph">
@@ -101,7 +101,7 @@
               eligendi tempora dolorem alias debitis earum delectus non rerum.
               Placeat, molestiae distinctio.
             </p>
-            <h3 class="heading-tertiary u-mb-1">
+            <h3 class="heading-tertiary u-margin-bottom-small">
               Live adventures like you never have before
             </h3>
             <p class="paragraph">
@@ -114,7 +114,31 @@
           </div>
           <div class="col-1-of-2">
             <div class="composition">
+              <!-- resolution switching -->
               <img
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 1"
+                class="composition__photo composition__photo--p1"
+                src="img/nat-1-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 2"
+                class="composition__photo composition__photo--p2"
+                src="img/nat-2-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 3"
+                class="composition__photo composition__photo--p3"
+                src="img/nat-3-large.jpg"
+              />
+              <!-- <img
                 src="img/nat-1-large.jpg"
                 alt="Photo 1"
                 class="composition__photo composition__photo--p1"
@@ -128,7 +152,7 @@
                 src="img/nat-3-large.jpg"
                 alt="Photo 3"
                 class="composition__photo composition__photo--p3"
-              />
+              /> -->
             </div>
           </div>
         </div>
@@ -139,7 +163,9 @@
           <div class="col-1-of-4">
             <div class="feature-box">
               <i class="feature-box__icon icon-basic-world"></i>
-              <h3 class="heading-tertiary u-mb-1">Explore the world</h3>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Explore the world
+              </h3>
               <p class="feature-box__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Aperiam, ipsum sapiente aspernatur.
@@ -150,7 +176,9 @@
           <div class="col-1-of-4">
             <div class="feature-box">
               <i class="feature-box__icon icon-basic-compass"></i>
-              <h3 class="heading-tertiary u-mb-1">Meet nature</h3>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Meet nature
+              </h3>
               <p class="feature-box__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Aperiam, ipsum sapiente aspernatur.
@@ -161,7 +189,9 @@
           <div class="col-1-of-4">
             <div class="feature-box">
               <i class="feature-box__icon icon-basic-map"></i>
-              <h3 class="heading-tertiary u-mb-1">Find your way</h3>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Find your way
+              </h3>
               <p class="feature-box__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Aperiam, ipsum sapiente aspernatur.
@@ -172,7 +202,9 @@
           <div class="col-1-of-4">
             <div class="feature-box">
               <i class="feature-box__icon icon-basic-heart"></i>
-              <h3 class="heading-tertiary u-mb-1">Live a healthier life</h3>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Live a healthier life
+              </h3>
               <p class="feature-box__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Aperiam, ipsum sapiente aspernatur.
@@ -183,7 +215,7 @@
       </section>
 
       <section class="section-tours" id="section-tours">
-        <div class="u-center-text u-mb-8">
+        <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">Most popular tours</h2>
         </div>
 
@@ -282,7 +314,7 @@
           </div>
         </div>
 
-        <div class="u-center-text">
+        <div class="u-center-text u-margin-top-huge">
           <a href="#" class="btn btn--green">Discover all tours</a>
         </div>
       </section>
@@ -295,7 +327,7 @@
             Your borwser is not supported!
           </video>
         </div>
-        <div class="u-center-text u-mb-8">
+        <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">We make people genuinely happy</h2>
         </div>
 
@@ -306,7 +338,7 @@
               <figcaption class="story__caption">Mary Smith</figcaption>
             </figure>
             <div class="story__text">
-              <h3 class="heading-tertiary u-mb-1">
+              <h3 class="heading-tertiary u-margin-bottom-small">
                 I had the best week ever with my family with
               </h3>
               <p>
@@ -326,7 +358,7 @@
               <figcaption class="story__caption">Jack Wilson</figcaption>
             </figure>
             <div class="story__text">
-              <h3 class="heading-tertiary u-mb-1">
+              <h3 class="heading-tertiary u-margin-bottom-small">
                 WOW! My life is compleately diffrent now
               </h3>
               <p>
@@ -339,7 +371,7 @@
           </div>
         </div>
 
-        <div class="u-center-text">
+        <div class="u-center-text u-margin-top-huge">
           <a href="#" class="btn-text">Read all stories &rarr;</a>
         </div>
       </section>
@@ -349,7 +381,7 @@
           <div class="book">
             <div class="book__form">
               <form action="#" class="form">
-                <div class="u-mb-2">
+                <div class="u-margin-bottom-medium">
                   <h2 class="heading-secondary">Start Booking</h2>
                 </div>
 
@@ -363,6 +395,7 @@
                   />
                   <label for="name" class="form__label">Full Name</label>
                 </div>
+
                 <div class="form__group">
                   <input
                     type="email"
@@ -375,7 +408,7 @@
                 </div>
 
                 <!-- in css we can style radio/chekboxes buttons so we create our own button -->
-                <div class="form__group u-mb-4">
+                <div class="form__group u-margin-bottom-medium">
                   <div class="form__radio-group">
                     <input
                       type="radio"
@@ -418,7 +451,23 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="logo" class="footer__logo" />
+        <!-- <img src="img/logo-green-2x.png" alt="logo" class="footer__logo" /> -->
+        <!-- art direction -->
+        <picture class="footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)"
+          />
+          <!-- density descripter -->
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+            src="img/logo-green-2x.png"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -469,10 +518,10 @@
         <div class="popup__right">
           <a href="#section-tours" class="popup__close">&times;</a>
 
-          <h2 class="heading-secondary u-margin-bottom-small u-mb-4">
+          <h2 class="heading-secondary u-margin-bottom-small">
             Start booking now
           </h2>
-          <h3 class="heading-tertiary u-margin-bottom-small u-mb-1">
+          <h3 class="heading-tertiary u-margin-bottom-small">
             Important &ndash; Please read these terms before booking
           </h3>
           <p class="popup__text">

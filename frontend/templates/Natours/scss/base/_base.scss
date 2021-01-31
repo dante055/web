@@ -10,14 +10,33 @@
 html {
   font-size: 62.5%; /* root font size : 10px */
   scroll-behavior: smooth; /* form smooth scrolling when moving btw section */
+
+  // order matters
+  @include respond(tab-land) {
+    font-size: 56.25%; /* 1 rem  = 9px */
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; /*  1 rem  = 8px, 8/16 = 50%   */
+  }
+
+  // min-width
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
 }
 
 /* property here are inheried by childs */
 body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: $color-grey-dark;
   padding: 3rem;
   box-sizing: border-box;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }
