@@ -1,0 +1,43 @@
+.features {
+  grid-column: center-start/center-end;
+  margin: 15rem 0;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr); /* auto auto */
+    grid-auto-rows: 1fr; /* new feature will have eual height, works only with fr */
+
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 6rem;
+    align-items: start; /*  to stop items from streching and creating mor space */
+  }
+}
+
+.feature {
+  float: left;
+  width: 33.3333%;
+  margin-bottom: 6rem;
+
+  @supports (display: grid) {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  display: grid;
+  grid-template-columns: min-content 1fr; /* icon text-block */
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2; /* 1/-1 cant be use as this in an implicit grid */
+    transform: translateY(-1rem);
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
+}

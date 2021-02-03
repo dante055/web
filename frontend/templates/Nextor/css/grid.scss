@@ -1,0 +1,84 @@
+body {
+  display: grid;
+  place-items: center;
+
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+}
+
+.container > * {
+  background-color: #b28451;
+}
+
+.container {
+  height: 20rem;
+  width: 40rem;
+  background-color: #f9f7f6;
+  //   margin: 10px auto;
+
+  display: grid;
+  gap: 2rem;
+
+  grid-template-columns: repeat(3, [col-start] 2fr [col-end]) 1fr [grid-end]; /* col-start 1, col-start 2 ... */
+  grid-template-rows: [header-start] 1fr [header-end box-start] 2fr [box-end main-start] 4fr [main-end footer-start] 1fr [footer-end];
+
+  grid-template-areas:
+    '. header header none' 'a b c sidebar'
+    'main main main sidebar' 'footer footer footer footer';
+}
+
+/* 
+    1. usine line no
+    2. using line name
+    3. using grid area names
+*/
+
+.header {
+  //   grid-column: 1/-1;
+  grid-column: col-start 1 / grid-end;
+  grid-area: header;
+}
+
+.content-1 {
+  grid-area: a;
+}
+.content-2 {
+  grid-area: b;
+}
+.content-3 {
+  grid-area: c;
+}
+
+.main {
+  //   grid-column: 1 / 4;
+  //   grid-column: col-start 1 / col-end 3;
+  grid-area: main;
+}
+.sidebar {
+  //   grid-row: 2/4;
+  //   grid-row: header-end/footer-start;
+  //   grid-row: box-start/main-end;
+  //   grid-column: 4/-1;
+  //   grid-column: col-end 3 / grid-end;
+  grid-area: sidebar;
+}
+.footer {
+  //   grid-column: 1 / -1;
+  //   grid-column: col-start 1 / grid-end;
+  grid-area: footer;
+}
+
+/* 
+  <body>
+    <div class="container">
+      <div class="item header">header</div>
+      <div class="item content-1">Content-1</div>
+      <div class="item content-2">Content-2</div>
+      <div class="item content-3">Content-3</div>
+      <div class="item sidebar">sidebar</div>
+      <div class="item main">main</div>
+      <div class="item footer">footer</div>
+    </div>
+  </body>
+*/
